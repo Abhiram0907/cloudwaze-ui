@@ -1,12 +1,13 @@
 import './App.css'
+import AppRoutes from './routes';
 
 function App() {
 
   return (
-        <p>
-        Click on the Vite and React logos to learn more
-      </p>
-  )
+    <div className="App">
+      <AppRoutes />
+    </div>
+  );
 }
 
 export default App
