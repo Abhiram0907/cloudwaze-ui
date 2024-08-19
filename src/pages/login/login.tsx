@@ -1,7 +1,16 @@
 import './login.css';
-import cloudwazeLogo from '../../assets/cloudwaze.png'; // Adjust the path as necessary
+import cloudwazeLogo from '../../assets/cloudwaze.png';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+    const navigate = useNavigate();
+
+    const handleLogin: any = () => {
+        console.log('Login button clicked');
+        // route to client dashboard
+        navigate('/client');
+    }
+
     return (
         <div className="login-container">
             <div className="login-card">
@@ -13,7 +22,7 @@ const Login = () => {
                 
                 <a className="forgot-password" href="#">Forgot Password?</a>
                 
-                <button className="login-button">Login</button>
+                <button className="login-button" onClick={handleLogin}>Login</button>
 
                 {/* <label className="remember-me">
                     <input type="checkbox" className="remember-me-checkbox" />
