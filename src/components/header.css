@@ -1,10 +1,4 @@
-.header-container{
-    height: 50px;
-    width: 100vw;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    background-color: rgb(93, 93, 93);
-    border: 1px;
+.header{
+    border: 1px solid #000000;
+    max-width: 100%;
 }

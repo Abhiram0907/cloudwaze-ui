@@ -1,6 +1,4 @@
-import './App.css'
-import Header from './components/header';
-import Menu from './components/menu';
+import './App.css';
 import AppRoutes from './routes';
 
 function App() {
