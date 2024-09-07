@@ -4,10 +4,12 @@ import './clientDash.css';
 const ClientDashboard = () => {
 
     return (
-    <div className="app">
-      <Menu />
+    <div className="app clientDashboard">
+        <div className="menu-content">
+            <Menu />
+        </div>
         <div className="main-content">
-            <Header />
+            <Header name='client'/>
         </div>
     </div>
     );

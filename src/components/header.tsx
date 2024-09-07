@@ -6,24 +6,45 @@ import { buttonClasses } from '@mui/base/Button';
 import { Tab as BaseTab, tabClasses } from '@mui/base/Tab';
 import './header.css';
 
-export default function Header() {
-  return (
+export default function Header({ name }: { name: string }) {
+  const ClientHeader = (
     <div>
-      <div className="header">
-        test
-      </div> 
+      <div className="client-header">
+        {name}
+      </div>
       <Tabs defaultValue={1}>
-      <TabsList>
-        <Tab value={1}>One</Tab>
-        <Tab value={2}>Two</Tab>
-        <Tab value={3}>Three</Tab>
-      </TabsList>
-      <TabPanel value={1}>First page</TabPanel>
-      <TabPanel value={2}>Second page</TabPanel>
-      <TabPanel value={3}>Third page</TabPanel>
+        <TabsList>
+          <Tab value={1}>Timesheets</Tab>
+          <Tab value={2}>Documents</Tab>
+        </TabsList>
+        <TabPanel value={1}>First page</TabPanel>
+        <TabPanel value={2}>Second page</TabPanel>
       </Tabs>
     </div>
   );
+  const AdminHeader = (
+    <div>
+      <div className="admin-header">
+        {name}
+      </div>
+      <Tabs defaultValue={1}>
+        <TabsList>
+          <Tab value={1}>Pending</Tab>
+          <Tab value={2}>Approved</Tab>
+          <Tab value={3}>Payroll status</Tab>
+          
+        </TabsList>
+        <TabPanel value={1}>Pending page</TabPanel>
+        <TabPanel value={2}>Approve page</TabPanel>
+        <TabPanel value={3}>Payroll status</TabPanel>
+      </Tabs>
+    </div>
+  );
+  if(name === 'client') {
+    return ClientHeader;
+  } else {
+    return AdminHeader;
+  }
 }
 
 const blue = {
@@ -84,6 +105,7 @@ const TabPanel = styled(BaseTabPanel)`
 const TabsList = styled(BaseTabsList)(
   ({ theme }) => `
   min-width: 400px;
+  border-radius: 8px;
   background-color: ${blue[500]};
   margin-bottom: 16px;
   display: flex;

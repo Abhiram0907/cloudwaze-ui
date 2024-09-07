@@ -1,55 +1,14 @@
-.app {
+.app.clientDashboard {
     display: flex;
     height: 100vh;
+    margin: 5px 5px 5px 5px;
     font-family: Arial, sans-serif;
-    background: #80b0e0;
   }
-  
-  .sidebar {
-    width: 250px;
-    background-color: #f8f9fa;
-    padding: 20px;
-    border-right: 1px solid #86a6c6;
-  }
-  
-  .sidebar-item {
-    margin-bottom: 20px;
-    cursor: pointer;
-  }
-  
-  .sidebar-item.active {
-    color: #007bff;
-    font-weight: bold;
-  }
-  
   .main-content {
     border: 1px solid #345474;
     border-radius: 5px;
     background: #e1dede;
-    margin: 5px;
     flex: 1;
     padding: 20px;
     overflow-y: auto;
   }
-  
-  /* .header {
-    margin-bottom: 20px;
-  } */
-  
-  .table-controls {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  th, td {
-    padding: 10px;
-    border: 1px solid #dee2e6;
-    text-align: left;
-  }
-  
