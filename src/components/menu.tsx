@@ -15,12 +15,6 @@ export default function Menu() {
     <div className="w-64 h-screen text-gray-800 p-4">
       <nav className="space-y-2">
         <div className="px-4 py-2 text-lg font-semibold">Menu</div>
-
-        <div className="px-4 py-2 hover:bg-gray-200 rounded-md flex items-center space-x-2">
-          <LogIn size={18} />
-          <span>Login</span>
-        </div>
-
         <div>
           <button
             onClick={() => toggleSection('workspace')}
@@ -77,6 +71,10 @@ export default function Menu() {
               </li>
             </ul>
           )}
+        </div>
+        <div className="px-4 py-2 hover:bg-gray-200 rounded-md flex items-center space-x-2">
+          <LogIn size={18} />
+          <span>Logout</span>
         </div>
       </nav>
     </div>

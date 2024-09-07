@@ -2,30 +2,55 @@ import { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { CircleUserRound, Eye, EyeOff } from 'lucide-react'
 
-export default function LoginPage() {
-  const [showPassword, setShowPassword] = useState(false)
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  const navigate = useNavigate()
+interface Post {
+  id: number;
+  title: string;
+  body: string;
+  userId: number;
+}
 
+export default function LoginPage() {
+  const [showPassword, setShowPassword] = useState(false);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [role, setRole] = useState('');
+  const navigate = useNavigate();
   const resetButtonRef = useRef<HTMLButtonElement>(null);
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log('Login button clicked with', username, password);
-    validateLogin(username, password);
-    navigate('/client');
-  }
+    await getRole(username, password);
+  };
+
   const handleReset = () => {
     setUsername('');
     setPassword('');
-    if (resetButtonRef.current) {
-      resetButtonRef.current.blur();
-    }
-  }
+    resetButtonRef.current?.blur();
+  };
 
-  const validateLogin = (username: String, password: String) => {
-    return console.log('Validating login with', username, password);
-  }
+  const getRole = async (username: string, password: string) => {
+    try {
+      const resp = await fetch('https://jsonplaceholder.typicode.com/posts');
+      const json: Post[] = await resp.json();
+
+      const userRole = json[0]?.body.includes('quia et suscipit') ? 'client' : 'admin';
+      setRole(userRole);
+
+      navigate(`/${userRole}`);
+    } catch (err: any) {
+      console.error('Failed to fetch role:', err);
+    }
+  };
+
+  // const validateLogin = (username: String, password: String) => {
+  //   getRole();
+  //   return console.log(role)
+  //   // if(role === 'client') {
+  //   //   return navigate('/client');
+  //   // } else {
+  //   //   return console.log('no client exist', username, password);
+  //   // }
+  // }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-blue-50 p-4">

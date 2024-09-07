@@ -8,9 +8,6 @@ import { Tab as BaseTab, tabClasses } from '@mui/base/Tab';
 export default function Header({ name }: { name: string }) {
   const ClientHeader = (
     <div>
-      <div className="bg-gray-200">
-        {name}
-      </div>
       <Tabs defaultValue={1}>
         <TabsList>
           <Tab value={1}>Timesheets</Tab>
@@ -23,9 +20,6 @@ export default function Header({ name }: { name: string }) {
   );
   const AdminHeader = (
     <div>
-      <div className="bg-gray-200">
-        {name}
-      </div>
       <Tabs defaultValue={1}>
         <TabsList>
           <Tab value={1}>Pending</Tab>
