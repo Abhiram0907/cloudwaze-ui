@@ -4,9 +4,9 @@ import Menu from '../../components/menu';
 const AdminDashboard = () => {
     
       return (
-        <div className="app adminDashboard">
+        <div className="custom-app adminDashboard">
           <Menu />
-          <div className="main-content">
+          <div className="custom-main-content">
             <Header name="admin"/>
             <div>
               Admin

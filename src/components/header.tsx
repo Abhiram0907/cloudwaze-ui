@@ -4,12 +4,11 @@ import { TabsList as BaseTabsList } from '@mui/base/TabsList';
 import { TabPanel as BaseTabPanel } from '@mui/base/TabPanel';
 import { buttonClasses } from '@mui/base/Button';
 import { Tab as BaseTab, tabClasses } from '@mui/base/Tab';
-import './header.css';
 
 export default function Header({ name }: { name: string }) {
   const ClientHeader = (
     <div>
-      <div className="client-header">
+      <div className="bg-gray-200">
         {name}
       </div>
       <Tabs defaultValue={1}>
@@ -24,7 +23,7 @@ export default function Header({ name }: { name: string }) {
   );
   const AdminHeader = (
     <div>
-      <div className="admin-header">
+      <div className="bg-gray-200">
         {name}
       </div>
       <Tabs defaultValue={1}>

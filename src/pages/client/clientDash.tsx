@@ -1,14 +1,15 @@
 import Header from '../../components/header';
 import Menu from '../../components/menu';
-import './clientDash.css';
+import '../../custom.css';
+
 const ClientDashboard = () => {
 
     return (
-    <div className="app clientDashboard">
-        <div className="menu-content">
+    <div className="custom-app clientDashboard">
+        <div className="custom-menu-content">
             <Menu />
         </div>
-        <div className="main-content">
+        <div className="custom-main-content">
             <Header name='client'/>
         </div>
     </div>
