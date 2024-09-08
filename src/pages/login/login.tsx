@@ -36,6 +36,7 @@ export default function LoginPage() {
       const userRole = json[0]?.body.includes('quia et suscipit') ? 'client' : 'admin';
       setRole(userRole);
 
+      console.log(`Role: ${role} - Username: ${username} - Password: ${password}`);
       navigate(`/${userRole}`);
     } catch (err: any) {
       console.error('Failed to fetch role:', err);
